@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Page View (Visible by default) -->
+    <div class="login-container" id="loginView">
+        <div class="logo">PORTAL</div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-button">Sign In</button>
+        </form>
+        <div class="links-container">
+            <p><a href="#">Forgot password?</a></p>
+            <p class="mt-4">Don't have an account? <a href="#">Sign Up</a></p>
+        </div>
+
+        <div class="separator"><span>OR</span></div>
+
+        <div class="social-login flex flex-col gap-4">
+            <button>
+                <span class="icon">G</span> <!-- Placeholder for Google Icon -->
+                Continue with Google
+            </button>
+            <button>
+                <span class="icon">A</span> <!-- Placeholder for Apple Icon -->
+                Continue with Apple
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Dashboard View (Hidden by default) -->
+    <div class="dashboard-container" id="dashboardView">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="profile-pic-container">
+                    <!-- Placeholder image URL, replace with actual user image -->
+                    <img src="https://placehold.co/90x90/cccccc/ffffff?text=User" alt="Profile Picture" class="profile-pic">
+                </div>
+                <div class="user-info">
+                    <p class="user-name">Lou</p>
+                    <p class="user-faculty">Faculty of Commerce</p>
+                </div>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#" class="active"><span class="icon">&#9733;</span> Home</a></li> <!-- Star icon -->
+                    <li><a href="#" id="logout-button"><span class="icon">&#128682;</span> Logout</a></li> <!-- Door icon, triggers logout -->
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <header class="main-header">
+                <h2>Noticeboard</h2>
+                <div class="header-controls">
+                    <button class="red-button"><span>&#x270E;</span></button> <!-- Pencil icon -->
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <div class="left-column">
+                    <div class="noticeboard-list">
+                        <!-- Notice Item 1 -->
+                        <div class="notice-item">
+                            <span class="notice-icon">&#128218;</span> <!-- Book icon -->
+                            <div class="notice-text">
+                                <p class="notice-date">10 January, 2025 | University Wide</p>
+                                <p class="notice-title">One of Australia’s leading Business educators</p>
+                                <p class="notice-excerpt">We are about to launch our University and award students...</p>
+                            </div>
+                            <button class="notice-button">Read More</button>
+                        </div>
+                        <!-- Notice Item 2 -->
+                        <div class="notice-item">
+                            <span class="notice-icon">&#128176;</span> <!-- Money bag icon -->
+                            <div class="notice-text">
+                                <p class="notice-date">01 January, 2025 | Careers</p>
+                                <p class="notice-title">With our scholarship summary, you achieve your dreams</p>
+                                <p class="notice-excerpt">With more than 400 plus scholarships, it may take you to...</p>
+                            </div>
+                            <button class="notice-button">Read More</button>
+                        </div>
+                        <!-- Notice Item 3 -->
+                        <div class="notice-item">
+                            <span class="notice-icon">&#128100;</span> <!-- Person icon -->
+                            <div class="notice-text">
+                                <p class="notice-date">20 January, 2025 | Development Degree</p>
+                                <p class="notice-title">The Griffith Alumni Community</p>
+                                <p class="notice-excerpt">Once you join the Griffith Alumni Community, we continue to...</p>
+                            </div>
+                            <button class="notice-button">Read More</button>
+                        </div>
+                    </div>
+                    <button class="view-more-notices">View more notices</button>
+
+                    <!-- Bottom Widgets (Current Enrolment & Assessment Status) -->
+                    <div class="bottom-widgets">
+                        <div class="widget current-enrolment">
+                            <h3>Current Enrolment</h3>
+                            <p>Bachelor of Commerce</p>
+                            <button>View more enrolment</button>
+                        </div>
+                        <div class="widget assessment-status">
+                            <h3>Assessment Status</h3>
+                            <div class="status-bar-wrapper">
+                                <div class="status-bar">
+                                    <div class="progress" style="width: 70%;"></div>
+                                </div>
+                                <span class="percentage" style="left: 70%;">70%</span> <!-- Position dynamically -->
+                            </div>
+                            <p class="status-text">Completed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <!-- Upcoming Activity -->
+                    <div class="upcoming-activity">
+                        <h3>Upcoming Activity</h3>
+                        <ul>
+                            <li>
+                                <span class="activity-bullet red-bullet"></span>
+                                <div>
+                                    <p>28 January, 2025 | Week 1</p>
+                                    <p class="activity-title">Introduction to Programming</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="activity-bullet blue-bullet"></span>
+                                <div>
+                                    <p>02 February, 2025 | Deadline</p>
+                                    <p class="activity-title">Assignment 1 Submission</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="activity-bullet green-bullet"></span>
+                                <div>
+                                    <p>15 February, 2025 | Midterm Exam</p>
+                                    <p class="activity-title">Mathematics for Computing</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="view-all-activity">View all activity</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
